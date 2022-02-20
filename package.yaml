@@ -58,6 +58,17 @@ executables:
     - advent-of-code2016-haskell
     - split
 
+  day-04:
+    main:                Solution.hs
+    source-dirs:         app/day-04
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - advent-of-code2016-haskell
+    - containers
+
 tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
