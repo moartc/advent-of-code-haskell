@@ -47,6 +47,17 @@ executables:
     dependencies:
     - advent-of-code2016-haskell
 
+  day-03:
+    main:                Solution.hs
+    source-dirs:         app/day-03
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - advent-of-code2016-haskell
+    - split
+
 tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
