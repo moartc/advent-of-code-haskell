@@ -69,6 +69,18 @@ executables:
     - advent-of-code2016-haskell
     - containers
 
+  day-05:
+    main:                Solution.hs
+    source-dirs:         app/day-05
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - advent-of-code2016-haskell
+    - pureMD5
+    - bytestring
+
 tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
