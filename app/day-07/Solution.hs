@@ -1,5 +1,6 @@
 {-# OPTIONS_GHC -Wno-incomplete-patterns #-}
-import Data.List (maximumBy, minimumBy, transpose)
+
+import Data.List (intersect, maximumBy, minimumBy, transpose)
 import Data.Map (Map (), fromListWith, toList)
 import Data.Ord (comparing)
 
@@ -34,13 +35,36 @@ isAnyBracketInvalid = any isBracketInvalid
   where
     isBracketInvalid str = inSquare str && isAbba (init (tail str))
 
-isStringValid :: [String] -> Bool
-isStringValid xs = not (isAnyBracketInvalid xs) && isAnyNonBracketValid xs
+isSupportTLS :: [String] -> Bool
+isSupportTLS xs = not (isAnyBracketInvalid xs) && isAnyNonBracketValid xs
 
 countSupportTLS :: [String] -> Int
-countSupportTLS = length . filter (isStringValid . splitString)
+countSupportTLS = length . filter (isSupportTLS . splitString)
+
+-- PART 2 --
+getAllAba :: String -> [String]
+getAllAba [a, b, c] = [[a, b, c] | a == c && a /= b]
+getAllAba (a : b : c : xs) = if a == c && a /= b then [a, b, c] : getAllAba (b : c : xs) else getAllAba (b : c : xs)
+
+collectAll :: [String] -> (String -> Bool) -> [String]
+collectAll strings predicate = concat [getAllAba s | s <- strings, predicate s]
+
+getBabForAba :: String -> String
+getBabForAba [a, b, c] = [b, a, b]
+
+isSSL :: [Char] -> Bool
+isSSL string = not (null (allBracetsChanged `intersect` allNonBrackets))
+  where
+    allBracetsChanged = map getBabForAba allBrackets
+    allBrackets = collectAll splits inSquare
+    allNonBrackets = collectAll splits (not . inSquare)
+    splits = splitString string
+
+countSupportSSL :: [String] -> Int
+countSupportSSL = length . filter isSSL
 
 main :: IO ()
 main = do
   input <- readFile "inputs/day-07.txt"
   putStrLn $ "Part 1 = " ++ show (countSupportTLS $ lines input)
+  putStrLn $ "Part 2 = " ++ show (countSupportSSL $ lines input)
