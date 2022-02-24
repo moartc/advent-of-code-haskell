@@ -112,6 +112,16 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - advent-of-code2016-haskell
+  
+  day-09:
+    main:                Solution.hs
+    source-dirs:         app/day-09
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - advent-of-code2016-haskell
 
 tests:
   advent-of-code2016-haskell-test:
