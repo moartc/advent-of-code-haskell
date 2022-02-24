@@ -47,17 +47,11 @@ rotateArgs str toDrop = (read (takeWhile (/= ' ') dropped) :: Int, read $ revers
   where
     dropped = drop toDrop str
 
-rotateColumnArgs :: [Char] -> (Int, Int)
-rotateColumnArgs str = rotateArgs str 16
-
-rotateRowArgs :: [Char] -> (Int, Int)
-rotateRowArgs str = rotateArgs str 13
-
 action :: [String] -> String -> [String]
 action arr command
   | "rect" `isInfixOf` command = rect arr $ rectArgs command
-  | "rotate column" `isInfixOf` command = rotateColumn arr $ rotateColumnArgs command
-  | otherwise = rotateRow arr $ rotateRowArgs command
+  | "rotate column" `isInfixOf` command = rotateColumn arr $ rotateArgs command 16
+  | otherwise = rotateRow arr $ rotateArgs command 13
 
 countLit :: [String] -> Int
 countLit arr = sum [length $ filter (=='#') s | s <- arr]
