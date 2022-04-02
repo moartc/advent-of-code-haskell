@@ -17,8 +17,8 @@ keypadPart1 =
   ]
 
 firstFromTuple :: Coord -> [Button] -> Maybe Button
-firstFromTuple (Coord x y) [] = Nothing
-firstFromTuple c@(Coord x y) (b@(n, Coord x2 y2) : xs) =
+firstFromTuple (Coord _ y) [] = Nothing
+firstFromTuple c@(Coord x y) (b@(_, Coord x2 y2) : xs) =
   if x == x2 && y == y2
     then Just b
     else firstFromTuple c xs
