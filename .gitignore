@@ -1,3 +1,4 @@
 .idea/
 advent-of-code2016-haskell.iml
 .stack-work/
+.vscode/

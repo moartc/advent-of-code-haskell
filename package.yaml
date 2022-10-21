@@ -33,9 +33,7 @@ executables:
     ghc-options:
     - -threaded
     - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - advent-of-code2016-haskell
+    - -with-rtsopts=-N    
 
   day-02:
     main:                Solution.hs
@@ -43,9 +41,7 @@ executables:
     ghc-options:
     - -threaded
     - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - advent-of-code2016-haskell
+    - -with-rtsopts=-N    
 
   day-03:
     main:                Solution.hs
@@ -55,7 +51,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - advent-of-code2016-haskell
     - split
 
   day-04:
@@ -66,7 +61,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - advent-of-code2016-haskell
     - containers
 
   day-05:
@@ -77,7 +71,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - advent-of-code2016-haskell
     - pureMD5
     - bytestring
 
@@ -89,7 +82,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - advent-of-code2016-haskell
     - containers
 
   day-07:
@@ -100,7 +92,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - advent-of-code2016-haskell
     - containers
 
   day-08:
@@ -109,9 +100,7 @@ executables:
     ghc-options:
     - -threaded
     - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - advent-of-code2016-haskell
+    - -with-rtsopts=-N    
   
   day-09:
     main:                Solution.hs
@@ -119,9 +108,7 @@ executables:
     ghc-options:
     - -threaded
     - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - advent-of-code2016-haskell
+    - -with-rtsopts=-N    
 
   day-10:
     main:                Solution.hs
@@ -130,8 +117,6 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
-    dependencies:
-    - advent-of-code2016-haskell
 
   day-11:
     main:                Solution.hs
@@ -141,7 +126,7 @@ executables:
       - -rtsopts
       - -with-rtsopts=-N
     dependencies:
-      - advent-of-code2016-haskell
+      - split
 
 tests:
   advent-of-code2016-haskell-test:
