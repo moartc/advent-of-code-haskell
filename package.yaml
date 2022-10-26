@@ -122,11 +122,12 @@ executables:
     main:                Solution.hs
     source-dirs:         app/day-11
     ghc-options:
-      - -threaded
-      - -rtsopts
-      - -with-rtsopts=-N
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
     dependencies:
-      - split
+    - split
+    - containers
 
 tests:
   advent-of-code2016-haskell-test:
