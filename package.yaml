@@ -129,6 +129,16 @@ executables:
     - split
     - containers
 
+  day-12:
+    main:                Solution.hs
+    source-dirs:         app/day-12
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+
 tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
