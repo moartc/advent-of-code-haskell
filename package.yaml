@@ -149,6 +149,16 @@ executables:
     dependencies:
     - containers
 
+  day-14:
+    main:                Solution.hs
+    source-dirs:         app/day-14
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - pureMD5
+
 tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
