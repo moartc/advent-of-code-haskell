@@ -2,3 +2,5 @@
 advent-of-code2016-haskell.iml
 .stack-work/
 .vscode/
+dist-newstyle/cache/compiler
+dist-newstyle/cache/config
