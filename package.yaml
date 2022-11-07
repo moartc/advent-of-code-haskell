@@ -165,10 +165,15 @@ executables:
     ghc-options:
     - -threaded
     - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:    
-    - regex-tdfa
+    - -with-rtsopts=-N
 
+  day-15:
+    main:                Solution.hs
+    source-dirs:         app/day-16
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
 
 tests:
   advent-of-code2016-haskell-test:
