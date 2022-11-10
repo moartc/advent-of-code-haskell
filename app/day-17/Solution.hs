@@ -1,9 +1,5 @@
 import Data.Digest.Pure.MD5 (md5)
 import Data.String (IsString (fromString))
-import Debug.Trace (trace)
-
-debug :: c -> String -> c
-debug = flip trace
 
 data State = State {pos :: (Int, Int), code :: String, answer :: String} deriving (Show)
 
@@ -36,17 +32,28 @@ doStep :: State -> State
 doStep state
   | length (answer state) < length (code state) = state
   | isPosFinal && length (answer state) > length (code state) = State (pos state) (code state) (code state)
-  | otherwise = foldl (\x y1 -> doStep (State (updatePos p y1) (code state ++ [y1]) (answer x))) state [d | d <- newDoors]
+  | otherwise = foldl (\x y1 -> doStep (State (updatePos p y1) (code state ++ [y1]) (answer x))) state [d | d <- getDoors (hashStr $ code state) p]
   where
     isPosFinal = fst p == 3 && snd p == 3
     p = pos state
-    newDoors = getDoors currentHash p
-    currentHash = hashStr $ code state
+
+doStep2 :: State -> State
+doStep2 state
+  | isPosFinal && length (answer state) < length (code state) = State (pos state) (code state) (code state)
+  | isPosFinal = state
+  | otherwise = foldl (\x y1 -> doStep2 (State (updatePos p y1) (code state ++ [y1]) (answer x))) state [d | d <- getDoors (hashStr $ code state) p]
+  where
+    isPosFinal = fst p == 3 && snd p == 3
+    p = pos state    
 
 part1 :: String -> String
-part1 input = drop (length input) $ answer $ doStep (State (0, 0) input "some really long answer to replace")
+part1 input = drop (length input) $ answer $ doStep2 (State (0, 0) input "short answer")
+
+part2 :: String -> Int
+part2 input = length $ drop (length input) $ answer $ doStep2 (State (0, 0) input "short answer")
 
 main :: IO ()
 main = do
-  putStrLn $ "Part 1 = " ++ show (part1 "vwbaicqe")
---putStrLn $ "Part 2 = " ++ show ()
+  let input = "vwbaicqe"
+  putStrLn $ "Part 1 = " ++ show (part1 input)
+  putStrLn $ "Part 2 = " ++ show (part2 input)
