@@ -1,7 +1,6 @@
 import Data.Char (digitToInt)
-import Data.List (elemIndex, intercalate, isInfixOf, isPrefixOf)
-import Data.Maybe (fromJust, fromMaybe)
-import Data.Tuple (swap)
+import Data.List (elemIndex, isPrefixOf)
+import Data.Maybe (fromMaybe)
 
 data Op = SwapP Int Int | SwapL Char Char | RotateL Int | RotateR Int | RotateB Char | Reverse Int Int | Move Int Int deriving (Show)
 
@@ -44,7 +43,7 @@ doOp (Move x y) str = move str x y
 rotateB :: String -> Char -> String
 rotateB str char = rotateR str $ 1 + idx + if idx >= 4 then 1 else 0
   where
-    idx = fromMaybe 0 $ elemIndex char str    
+    idx = fromMaybe 0 $ elemIndex char str
 
 rotateR :: String -> Int -> String
 rotateR str 0 = str
