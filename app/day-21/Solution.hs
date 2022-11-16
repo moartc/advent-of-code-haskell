@@ -5,17 +5,11 @@ import Data.Maybe (fromMaybe)
 data Op = SwapP Int Int | SwapL Char Char | RotateL Int | RotateR Int | RotateB Char | Reverse Int Int | Move Int Int deriving (Show)
 
 rotateBstr = "rotate based on position of letter "
-
 rotateLstr = "rotate left "
-
 rotateRstr = "rotate right "
-
 swapPstr = "swap position "
-
 swapLstr = "swap letter "
-
 reverseStr = "reverse positions "
-
 moveStr = "move position "
 
 parseLine :: String -> Op

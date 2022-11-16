@@ -1,12 +1,8 @@
-import qualified Control.Applicative as Map
 import Data.Char (digitToInt, intToDigit)
 import Data.List.Split (splitOn)
 import Data.Map (Map, empty, insert, member, (!))
-import Debug.Trace (trace)
 
 data Node = Node {x :: Int, y :: Int, size :: Int, used :: Int, avail :: Int} deriving (Show, Eq, Ord)
-
-debug = flip trace
 
 trim :: String -> String
 trim = unwords . words
@@ -70,13 +66,12 @@ leftOnGoal :: Int -> [Node] -> Int -> Map (Int, Int) Int -> Map (Int, Int) Int
 leftOnGoal pos nodes counter cache
   | shouldExit = cache
   | emptyX == pos && emptyY == 0 = updatedCache
-  | otherwise = foldl (\c node -> leftOnGoal pos (move nodes node) (counter + 1) c) updatedCache steps
+  | otherwise = foldl (\c node -> leftOnGoal pos (move nodes node) (counter + 1) c) updatedCache $ toMove nodes
   where
     currentMin = if member (emptyX, emptyY) cache then cache ! (emptyX, emptyY) else 999999999
     shouldExit = currentMin <= counter
     updatedCache = insert (emptyX, emptyY) counter cache
     (emptyX, emptyY) = getEmpty nodes
-    steps = toMove nodes
 
 moveGoalTo00 :: ((Int, Int), Int) -> Int
 moveGoalTo00 ((goalX, emptyX), counter)
@@ -84,21 +79,16 @@ moveGoalTo00 ((goalX, emptyX), counter)
   | otherwise = moveGoalTo00 $ moveGoalOneStepWithEmptyOnRight counter goalX emptyX
 
 moveGoalOneStepWithEmptyOnRight :: Int -> Int -> Int -> ((Int, Int), Int)
-moveGoalOneStepWithEmptyOnRight counter goalX emptyX = res
-  where
-    res = ((goalX -1, emptyX -1), counter + 5)
+moveGoalOneStepWithEmptyOnRight counter goalX emptyX = ((goalX -1, emptyX -1), counter + 5)
 
 part2 :: String -> Int
-part2 input = answer
+part2 input = ((rightBound - 1) * 5) + leftOnGoalRes + 1
   where
     nodes = parseInput input
-    emptyNode = getEmpty nodes
     rightBound = maximum $ map x nodes
-    limit = snd emptyNode
-    part2Nodes = filter (\n -> y n <= limit) nodes
+    part2Nodes = filter (\n -> y n <= snd (getEmpty nodes)) nodes
     leftOnGoalState = leftOnGoal (rightBound -1) nodes 0 empty
     leftOnGoalRes = leftOnGoalState ! (rightBound -1, 0)
-    answer = ((rightBound - 1) * 5) + leftOnGoalRes + 1
 
 main :: IO ()
 main = do
