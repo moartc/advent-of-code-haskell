@@ -83,11 +83,10 @@ toggle (Jnz a b) = Cpy a b
 toggle (Cpy a b) = Jnz a b
 
 updateAt :: [Instruction] -> Int -> Instruction -> [Instruction]
-updateAt all idx new = res
+updateAt all idx new = begin ++ [new] ++ end
   where
     begin = take idx all
     end = tail $ drop idx all
-    res = begin ++ [new] ++ end
 
 play :: [Instruction] -> Registers -> Int -> (Registers, Int)
 play instructions registers idx
@@ -124,9 +123,7 @@ playSingle instr singleInstr registers idx = (updatedRegs, idx + 1, instr)
     (updatedRegs, _) = operation registers idx instr singleInstr
 
 getResult :: String -> Registers -> Int
-getResult input regs = fst gameResult ! 'a'
-  where
-    gameResult = play (parseInput $ lines input) regs 0
+getResult input regs = fst (play (parseInput $ lines input) regs 0) ! 'a'
 
 tryOptimize1 :: [Instruction] -> Registers -> Int -> (Registers, Int)
 tryOptimize1 inst regs idx = ans
@@ -138,14 +135,9 @@ tryOptimize1 inst regs idx = ans
     i3 = inst !! (idx + 3)
     i4 = inst !! (idx + 4)
     ans = if opt imin1 i0 i1 i2 i3 i4 then (updatedRegs, idx + 4) else (incRegs, idx + 1)
-    prevValA = regs ! 'a'
-    valC = regs ! 'c'
-    valD = regs ! 'd'
-    valA = prevValA + (valC * valD)
-    updatedA = M.insert 'a' valA regs
-    updatedD = M.insert 'd' 0 updatedA
-    updatedRegs = M.insert 'c' 0 updatedD
-    (incRegs, instr) = operation regs idx inst (inst !! idx)
+    valA = (regs ! 'a') + ((regs ! 'c') * (regs ! 'd'))        
+    updatedRegs = M.insert 'c' 0 $ M.insert 'd' 0 $ M.insert 'a' valA regs
+    (incRegs, _) = operation regs idx inst (inst !! idx)
 
 opt :: Instruction -> Instruction -> Instruction -> Instruction -> Instruction -> Instruction -> Bool
 opt (Cpy _ _) (Inc 'a') (Dec 'c') (Jnz (Reg 'c') (IntVal (-2))) (Dec 'd') (Jnz (Reg 'd') (IntVal (-5))) = True
