@@ -244,6 +244,26 @@ executables:
     dependencies:
     - containers
 
+  day-24:
+    main:                Solution.hs
+    source-dirs:         app/day-24
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+
+  day-25:
+    main:                Solution.hs
+    source-dirs:         app/day-25
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+
 
 tests:
   advent-of-code2016-haskell-test:
