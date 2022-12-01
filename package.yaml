@@ -1,6 +1,6 @@
-name:                advent-of-code2016-haskell
+name:                advent-of-code-haskell
 version:             0.1.0.0
-github:              "szwester/advent-of-code-2016-haskell"
+github:              "szwester/advent-of-code-haskell"
 license:             BSD3
 author:              "Szwester"
 maintainer:          "example@example.com"
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/advent-of-code2016-haskell#readme>
+description:         Please see the README on GitHub at <https://github.com/githubuser/advent-of-code-haskell#readme>
 
 dependencies:
 - base >= 4.7 && < 5

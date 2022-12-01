@@ -4,11 +4,11 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           advent-of-code2016-haskell
+name:           advent-of-code-haskell
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/advent-of-code2016-haskell#readme>
-homepage:       https://github.com/szwester/advent-of-code-2016-haskell#readme
-bug-reports:    https://github.com/szwester/advent-of-code-2016-haskell/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/advent-of-code-haskell#readme>
+homepage:       https://github.com/szwester/advent-of-code-haskell#readme
+bug-reports:    https://github.com/szwester/advent-of-code-haskell/issues
 author:         Szwester
 maintainer:     example@example.com
 copyright:      2022 Author name here
@@ -21,11 +21,11 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/szwester/advent-of-code-2016-haskell
+  location: https://github.com/szwester/advent-of-code-haskell
 
 library
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       src
   build-depends:
@@ -35,7 +35,7 @@ library
 executable 2016-day-01
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-01
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -46,7 +46,7 @@ executable 2016-day-01
 executable 2016-day-02
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-02
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -57,7 +57,7 @@ executable 2016-day-02
 executable 2016-day-03
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-03
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -69,7 +69,7 @@ executable 2016-day-03
 executable 2016-day-04
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-04
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -81,7 +81,7 @@ executable 2016-day-04
 executable 2016-day-05
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-05
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -94,7 +94,7 @@ executable 2016-day-05
 executable 2016-day-06
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-06
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -106,7 +106,7 @@ executable 2016-day-06
 executable 2016-day-07
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-07
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -118,7 +118,7 @@ executable 2016-day-07
 executable 2016-day-08
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-08
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -129,7 +129,7 @@ executable 2016-day-08
 executable 2016-day-09
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-09
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -140,7 +140,7 @@ executable 2016-day-09
 executable 2016-day-10
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-10
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -151,7 +151,7 @@ executable 2016-day-10
 executable 2016-day-11
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-11
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -164,7 +164,7 @@ executable 2016-day-11
 executable 2016-day-12
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-12
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -176,7 +176,7 @@ executable 2016-day-12
 executable 2016-day-13
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-13
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -188,7 +188,7 @@ executable 2016-day-13
 executable 2016-day-14
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-14
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -200,7 +200,7 @@ executable 2016-day-14
 executable 2016-day-15
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-15
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -211,7 +211,7 @@ executable 2016-day-15
 executable 2016-day-16
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-16
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -222,7 +222,7 @@ executable 2016-day-16
 executable 2016-day-17
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-17
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -234,7 +234,7 @@ executable 2016-day-17
 executable 2016-day-18
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-18
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -246,7 +246,7 @@ executable 2016-day-18
 executable 2016-day-19
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-19
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -258,7 +258,7 @@ executable 2016-day-19
 executable 2016-day-20
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-20
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -269,7 +269,7 @@ executable 2016-day-20
 executable 2016-day-21
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-21
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -281,7 +281,7 @@ executable 2016-day-21
 executable 2016-day-22
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-22
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -294,7 +294,7 @@ executable 2016-day-22
 executable 2016-day-23
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-23
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -306,7 +306,7 @@ executable 2016-day-23
 executable 2016-day-24
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-24
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -318,7 +318,7 @@ executable 2016-day-24
 executable 2016-day-25
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2016/day-25
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -330,7 +330,7 @@ executable 2016-day-25
 executable 2022-day-01
   main-is: Solution.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       app/2022/day-01
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -344,7 +344,7 @@ test-suite advent-of-code2016-haskell-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_advent_of_code2016_haskell
+      Paths_advent_of_code_haskell
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
