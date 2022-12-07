@@ -329,6 +329,17 @@ executables:
     dependencies:
     - containers
     - split
+  
+  2022-day-07:
+    main:                Solution.hs
+    source-dirs:         app/2022/day-07
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+    - split
 
 
 tests:
