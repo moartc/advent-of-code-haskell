@@ -19,9 +19,8 @@ type RoundState = ([Int], [Monkey])
 oneMonkeyRound :: RoundState -> Int -> Bool -> RoundState
 oneMonkeyRound (insp, ms) monkeyIdx divBy3 = (updatedInsp, fst newState)
   where
-    currentMonkeyInsp = insp !! monkeyIdx
     newState = monkeyRound ms monkeyIdx divBy3
-    updatedInsp = replace monkeyIdx (currentMonkeyInsp + snd newState) insp
+    updatedInsp = replace monkeyIdx ((insp !! monkeyIdx) + snd newState) insp
 
 part1 :: String -> Int
 part1 inp = product $ take 2 $ reverse $ sort $ fst finalRS
@@ -41,7 +40,7 @@ allMonkeysRound :: RoundState -> Int -> Bool -> RoundState
 allMonkeysRound rs idx divBy3 = foldl (\r y -> oneMonkeyRound r y divBy3) rs [0 .. length (snd rs) -1]
 
 monkeyRound :: [Monkey] -> Int -> Bool -> ([Monkey], Int)
-monkeyRound monkeys idx divBy3 = (replace idx resetMonk firstUpdate, length $ items monk) -- `debug` ("return " ++ show (inspToRet))
+monkeyRound monkeys idx divBy3 = (replace idx resetMonk firstUpdate, length $ items monk)
   where
     monk = monkeys !! idx
     firstUpdate = updateMonkeys monkeys [handleItem monk item allDivs divBy3 | item <- items monk]
@@ -77,6 +76,15 @@ parseMonkey input = Monkey items operator rightVal divisibleBy ifTrue ifFalse
     divisibleBy = read $ dropWhile (not . isDigit) $ input !! 3 :: Int
     ifTrue = digitToInt $ last $ input !! 4
     ifFalse = digitToInt $ last $ input !! 5
+
+data Expression
+  = Lit Float
+  | Add Expression Expression
+  | Mul Expression Expression
+  | Sub Expression Expression
+  | Div Expression Expression deriving(Show)
+
+x = Add (Lit 1.2) (Lit 1.2)
 
 main :: IO ()
 main = do
