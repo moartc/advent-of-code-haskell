@@ -396,6 +396,51 @@ executables:
     - containers
     - split
 
+  2022-day-13:
+    main:                Solution.hs
+    source-dirs:         app/2022/day-13
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+    - split
+    - parsec
+
+  2022-day-14:
+    main:                Solution.hs
+    source-dirs:         app/2022/day-14
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+    - split
+
+  2022-day-15:
+    main:                Solution.hs
+    source-dirs:         app/2022/day-15
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+    - split
+
+  2022-day-16:
+    main:                Solution.hs
+    source-dirs:         app/2022/day-16
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N    
+    dependencies:
+    - containers
+    - split
+
 tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
