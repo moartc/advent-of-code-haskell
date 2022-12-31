@@ -412,9 +412,8 @@ executables:
     main:                Solution.hs
     source-dirs:         app/2022/day-14
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
+    - -O2
+    - -threaded    
     dependencies:
     - containers
     - split
@@ -423,9 +422,8 @@ executables:
     main:                Solution.hs
     source-dirs:         app/2022/day-15
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
+    - -O2
+    - -threaded    
     dependencies:
     - containers
     - split
@@ -445,7 +443,7 @@ tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
     source-dirs:         test
-    ghc-options:
+    ghc-options:    
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N
