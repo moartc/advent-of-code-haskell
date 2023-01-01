@@ -1,9 +1,6 @@
-import Data.List (dropWhileEnd)
+import qualified Data.Bifunctor
 import Data.List.Split (splitOn)
 import Data.Set (fromList)
-import Debug.Trace
-
-debug = flip trace
 
 type Inp = ((Int, Int), (Int, Int))
 
@@ -31,8 +28,28 @@ part1 input pointToCheck = res - sensorAndBeacon
     res = length $ fromList $ concatMap (\pair -> filter (\x -> distance (fst pair) (x, pointToCheck) <= uncurry distance pair) [min - maxDist .. max + maxDist]) input
     sensorAndBeacon = length $ fromList $ map snd $ filter (\x -> snd (fst x) == pointToCheck || snd (snd x) == pointToCheck) input
 
+pointsOutside :: Inp -> Int -> [(Int, Int)]
+pointsOutside inp@((x1, y1), (x2, y2)) maxVal = l1 ++ l2 ++ l3 ++ l4
+  where
+    dist = uncurry distance inp
+    minX1 = max 0 x1
+    minX2 = min maxVal x1
+    minY1 = max (y1 - dist -1) 0
+    minY2 = min (y1 + dist + 1) maxVal
+    l1 = takeWhile (\x -> snd x <= y1) $ zip [minX1 .. maxVal] [minY1 .. maxVal]
+    l2 = takeWhile (\x -> snd x <= y1) $ zip [minX2, minX2 -1 .. 0] [minY1 .. maxVal]
+    l3 = takeWhile (\x -> snd x >= y1) $ zip [minX1 .. maxVal] [minY2, minY2 -1 .. 0]
+    l4 = takeWhile (\x -> snd x >= y1) $ zip [minX2, minX2 -1 .. 0] [minY2, minY2 -1 .. 0]
+
+part2 :: [Inp] -> Int -> Int
+part2 input maxVal = ans
+  where
+    pointToDist = map (\x -> Data.Bifunctor.second (distance (fst x)) x) input
+    p2 = head $ filter (\pair -> not $ any (\p -> distance pair (fst p) <= snd p) pointToDist) $ concatMap (`pointsOutside` maxVal) input
+    ans = (fst p2 * maxVal) + snd p2
+
 main :: IO ()
 main = do
   input <- readFile "inputs/2022/day-15.txt"
   putStrLn $ "Part 1 = " ++ show (part1 (parseInp input) 2000000)
-  putStrLn $ "Part 2 = " -- ++ show (part2 input)
+  putStrLn $ "Part 2 = " ++ show (part2 (parseInp input) 4000000)
