@@ -21,412 +21,411 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
-
-library:
-  source-dirs: src
+- text
+- parsec
 
 executables:
 
-  2016-day-01:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-01
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
+  # 2016-day-01:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-01
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
 
-  2016-day-02:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-02
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
+  # 2016-day-02:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-02
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
 
-  2016-day-03:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-03
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - split
+  # 2016-day-03:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-03
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - split
 
-  2016-day-04:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-04
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - containers
+  # 2016-day-04:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-04
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - containers
 
-  2016-day-05:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-05
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - pureMD5
-    - bytestring
+  # 2016-day-05:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-05
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - pureMD5
+  #   - bytestring
 
-  2016-day-06:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-06
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - containers
+  # 2016-day-06:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-06
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - containers
 
-  2016-day-07:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-07
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - containers
+  # 2016-day-07:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-07
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - containers
 
-  2016-day-08:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-08
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
+  # 2016-day-08:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-08
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
   
-  2016-day-09:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-09
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
+  # 2016-day-09:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-09
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
 
-  2016-day-10:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-10
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+  # 2016-day-10:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-10
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
 
-  2016-day-11:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-11
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - split
-    - containers
+  # 2016-day-11:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-11
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - split
+  #   - containers
 
-  2016-day-12:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-12
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
+  # 2016-day-12:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-12
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
 
-  2016-day-13:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-13
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
+  # 2016-day-13:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-13
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
 
-  2016-day-14:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-14
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - pureMD5
+  # 2016-day-14:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-14
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - pureMD5
 
-  2016-day-15:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-15
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+  # 2016-day-15:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-15
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
 
-  2016-day-16:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-16
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+  # 2016-day-16:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-16
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
 
-  2016-day-17:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-17
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - pureMD5
+  # 2016-day-17:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-17
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - pureMD5
 
-  2016-day-18:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-18
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - containers
+  # 2016-day-18:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-18
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - containers
 
-  2016-day-19:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-19
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - containers
+  # 2016-day-19:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-19
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - containers
 
-  2016-day-20:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-20
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+  # 2016-day-20:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-20
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
 
-  2016-day-21:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-21
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - containers
+  # 2016-day-21:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-21
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - containers
   
-  2016-day-22:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-22
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - split
-    - containers
+  # 2016-day-22:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-22
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N
+  #   dependencies:
+  #   - split
+  #   - containers
 
-  2016-day-23:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-23
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
+  # 2016-day-23:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-23
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
 
-  2016-day-24:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-24
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
+  # 2016-day-24:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-24
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
 
-  2016-day-25:
-    main:                Solution.hs
-    source-dirs:         app/2016/day-25
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
+  # 2016-day-25:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2016/day-25
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
 
-  2022-day-01:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-01
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-01:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-01
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-02:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-02
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-02:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-02
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-03:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-03
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-03:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-03
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
   
-  2022-day-04:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-04
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-04:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-04
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-05:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-05
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-05:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-05
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-06:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-06
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-06:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-06
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
   
-  2022-day-07:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-07
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-07:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-07
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-08:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-08
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-08:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-08
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-09:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-09
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-09:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-09
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-10:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-10
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-10:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-10
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-11:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-11
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-11:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-11
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
   
-  2022-day-12:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-12
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-12:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-12
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-13:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-13
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N    
-    dependencies:
-    - containers
-    - split
-    - parsec
+  # 2022-day-13:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-13
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   dependencies:
+  #   - containers
+  #   - split
+  #   - parsec
 
-  2022-day-14:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-14
-    ghc-options:
-    - -O2
-    - -threaded    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-14:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-14
+  #   ghc-options:
+  #   - -O2
+  #   - -threaded    
+  #   dependencies:
+  #   - containers
+  #   - split
 
-  2022-day-15:
-    main:                Solution.hs
-    source-dirs:         app/2022/day-15
-    ghc-options:
-    - -O2
-    - -threaded    
-    dependencies:
-    - containers
-    - split
+  # 2022-day-15:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-15
+  #   ghc-options:
+  #   - -O2
+  #   - -threaded    
+  #   dependencies:
+  #   - containers
+  #   - split
 
   2022-day-16:
     main:                Solution.hs
@@ -435,9 +434,10 @@ executables:
     - -threaded
     - -rtsopts
     - -with-rtsopts=-N    
+    - -O2    
     dependencies:
     - containers
-    - split
+    - split            
 
 tests:
   advent-of-code2016-haskell-test:
