@@ -427,9 +427,21 @@ executables:
   #   - containers
   #   - split
 
-  2022-day-16:
+  # 2022-day-16:
+  #   main:                Solution.hs
+  #   source-dirs:         app/2022/day-16
+  #   ghc-options:
+  #   - -threaded
+  #   - -rtsopts
+  #   - -with-rtsopts=-N    
+  #   - -O2    
+  #   dependencies:
+  #   - containers
+  #   - split     
+
+  2022-day-17:
     main:                Solution.hs
-    source-dirs:         app/2022/day-16
+    source-dirs:         app/2022/day-17
     ghc-options:
     - -threaded
     - -rtsopts
@@ -437,7 +449,7 @@ executables:
     - -O2    
     dependencies:
     - containers
-    - split            
+    - split             
 
 tests:
   advent-of-code2016-haskell-test:
