@@ -38,6 +38,21 @@ executable 2022-day-17
     , text
   default-language: Haskell2010
 
+executable 2022-day-18
+  main-is: Solution.hs
+  other-modules:
+      Paths_advent_of_code_haskell
+  hs-source-dirs:
+      app/2022/day-18
+  ghc-options: -threaded -rtsopts -O2
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , parsec
+    , split
+    , text
+  default-language: Haskell2010
+
 test-suite advent-of-code2016-haskell-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs

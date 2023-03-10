@@ -451,6 +451,17 @@ executables:
     - containers
     - split             
 
+  2022-day-18:
+    main:                Solution.hs
+    source-dirs:         app/2022/day-18
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -O2    
+    dependencies:
+    - containers
+    - split          
+
 tests:
   advent-of-code2016-haskell-test:
     main:                Spec.hs
