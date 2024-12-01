@@ -1,8 +1,8 @@
 name:                advent-of-code-haskell
 version:             0.1.0.0
-github:              "szwester/advent-of-code-haskell"
+github:              "moartc/advent-of-code-haskell"
 license:             BSD3
-author:              "Szwester"
+author:              "M"
 maintainer:          "example@example.com"
 copyright:           "2022 Author name here"
 
@@ -454,6 +454,17 @@ executables:
   2022-day-18:
     main:                Solution.hs
     source-dirs:         app/2022/day-18
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -O2    
+    dependencies:
+    - containers
+    - split          
+
+  2024-day-01:
+    main:                Solution.hs
+    source-dirs:         app/2024/day-01
     ghc-options:
     - -threaded
     - -rtsopts

@@ -4,3 +4,24 @@ advent-of-code2016-haskell.iml
 .vscode/
 dist-newstyle/cache/compiler
 dist-newstyle/cache/config
+
+*.hi
+*.o
+*.dyn_o
+*.dyn_hi
+
+dist/
+dist-newstyle/
+.cabal-sandbox/
+.cabal/
+*.stack-work/
+
+*.tar.gz
+*.cabal-dev
+*.stack-work/
+
+# GHCi history
+*.ghci
+
+.idea/
+.vscode/
